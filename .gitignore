@@ -22,3 +22,13 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+target/surefire-reports/com.syf.ImageManager.controller.UserControllerTest.txt
+target/surefire-reports/com.syf.ImageManager.ImageManagerApplicationTests.txt
+target/surefire-reports/com.syf.ImageManager.service.impl.UserServiceImplTest.txt
+target/surefire-reports/TEST-com.syf.ImageManager.controller.UserControllerTest.xml
+target/surefire-reports/TEST-com.syf.ImageManager.ImageManagerApplicationTests.xml
+target/surefire-reports/TEST-com.syf.ImageManager.service.impl.UserServiceImplTest.xml
+target/ImageManager-0.0.1-SNAPSHOT.jar.original
+target/classes/META-INF/maven/com.syf/ImageManager/pom.xml
+target/classes/META-INF/maven/com.syf/ImageManager/pom.properties
+target/classes/META-INF/MANIFEST.MF
