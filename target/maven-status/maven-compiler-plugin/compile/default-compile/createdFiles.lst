@@ -1,0 +1,10 @@
+com\syf\ImageManager\service\UserService.class
+com\syf\ImageManager\model\ImgurResponse.class
+com\syf\ImageManager\service\impl\ImgurServiceImpl.class
+com\syf\ImageManager\service\impl\UserServiceImpl.class
+com\syf\ImageManager\controller\UserController.class
+com\syf\ImageManager\ImageManagerApplication.class
+com\syf\ImageManager\model\Image.class
+com\syf\ImageManager\repository\UserRepository.class
+com\syf\ImageManager\model\User.class
+com\syf\ImageManager\service\ImgurService.class

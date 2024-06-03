@@ -1,0 +1,4 @@
+com\syf\ImageManager\service\impl\ImgurServiceImplTest.class
+com\syf\ImageManager\controller\UserControllerTest.class
+com\syf\ImageManager\service\impl\UserServiceImplTest.class
+com\syf\ImageManager\ImageManagerApplicationTests.class
