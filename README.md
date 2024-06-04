@@ -1,6 +1,7 @@
 **1.  Github repository URL** : https://github.com/waytoamitj/ImageManager
 
 **2. Architecture Overview**
+
 a. Model Entity
 User : User entitled for registration. Registered user can upload, view and delete images through Imgur exposed APIs.
 Image : Artifact to upload, view and delete in Imgur application.
