@@ -26,17 +26,23 @@ j. Scalable, resilient, modular application for mentioned volume processing. It 
 **2. Architecture Overview**
 
 a. Model Entity
+
 User : User entitled for registration. Registered user can upload, view and delete images through Imgur exposed APIs.
+
 Image : Artifact to upload, view and delete in Imgur application.
 
 b. Service
+
 User Service : To perform CRUD operations on registered User.
-Imgur Service : Service layer to interact with Imgur exposed APIs and execute upload, view and delete image operations for registered User.
+
+Imgur Service : This service class is responsible for interacting with the Imgur API using WebClient. Service layer to interact with Imgur exposed APIs and execute upload, view and delete image operations for registered User.
 
 c. Repository
+
 User repository: Extends JpaRepository to perform CRUD operations on the User entity. It includes a method to find a user by Id.
 
 d. Controller
+
 User Controller: User Controller defines REST endpoints to perform necessary actions. APIs exposed
 
 1. Register User :  /api/users/register  (POST)
@@ -132,19 +138,19 @@ Publishing on Kafka Topic user.image ProducerRecord(topic=user.image, partition=
 
 **16. Future Design considerations which are not accomplished due to time constraints / Infrastructure limitations****
 
-a. API gateway pattern (eg APIGEE) to have single point of entry for exposed end points. Authentication can be done at API gateway and can act as facade pattern for microservices.
+a. API gateway pattern (eg APIGEE) to have single point of entry for exposed end points.
 
-b. Multi-Threaded Async submission of tasks to service layer while controller will return immediately.
+b. Multi-Threaded Async submission of tasks to service layer while controller will return immediately. (at least for User CRUD operations). Bulkhead pattern to create thread pools to isolate resources.
 
-c. Async submission of Kafka event on cloud topic for user-image json
+c. Async submission of Kafka event on cloud topic for key=userId and value= user object JSON.
 
 d. CQRS pattern for writing and reading separation.
 
-e. Swagger
+e. Swagger API documentation
 
 f. oAuth2 / JWT spring security
 
-g. 
+g. Automate CI/ CD pipeline.
 
 
 
