@@ -21,8 +21,13 @@ User Controller: User Controller defines REST endpoints to perform necessary act
 4. Users list : /api/users/list (GET)
 
 5. Image Upload in Imgur app by authenticated and authorized User : /api/users/{userId}/images/upload   (POST)
+uploadImage Endpoint: Accepts a MultipartFile representing the image to be uploaded. The logic inside the method should handle storing the image and updating the user's images list.
+
 6. Fetch uploaded image in Imgur app for authenticated and authorized User :  /api/users/{userId}/images/{imageId}   (GET)
+viewImages Endpoint: Retrieves the list of images associated with the user and returns it in the response.
+
 7. Delete image in Imgur app by authenticated and authorized User :  /api/users/{userId}/images/{imageDeleteHash}    (DELETE)
+deleteImage Endpoint: Accepts the URL of the image to be deleted and removes it from the user's images list.
 
 ![image](https://github.com/waytoamitj/ImageManager/assets/171623556/9145d352-fb57-4f50-b0db-a37cd6833806)
 
@@ -82,12 +87,14 @@ User Controller: User Controller defines REST endpoints to perform necessary act
 
 ![image](https://github.com/waytoamitj/ImageManager/assets/171623556/14c45236-129c-4c7c-8811-8786ec09b931)
 
-**14. Associated image also deleted from user id=10**
+**14. Associated image is deleted from user id=10**
 
-![image](https://github.com/waytoamitj/ImageManager/assets/171623556/39ae5865-3269-45c9-a890-c84921293a3b)
+![image](https://github.com/waytoamitj/ImageManager/assets/171623556/73bda00a-c887-4a0d-a6b5-ce16c6e146e1)
 
-
-
+**15. Future Design considerations which are not accomplished due to time constraints / Infrastructure limitations**
+a. API gateway pattern (eg APIGEE) to have single point of entry for exposed end points. Authentication can be done at API gateway and can act as facade pattern for microservices.
+b. Integration of Swagger for API documentation.
+c. 
 
 
 
