@@ -1,4 +1,27 @@
-**1.  Github repository URL** : https://github.com/waytoamitj/ImageManager
+Image Manager App
+
+****1.  Use case addressed in project:**
+
+a. User registration with username and password.
+
+b. Upload, view, delete image with authentication and authorization.
+
+c. Associated list of uploaded images to user profile.
+
+d. View basic information (username and password) and associated images.
+
+e. H2 in memory database for user persistence, Image record and user-image association.
+
+f. Imgur API Integration to Upload, view and delete images from Imgur. Imgur account created for the same. Client ID and Secret is in config.
+
+g. All development based on REST APIs.
+
+h. Project uploaded to Github repository. URL: : https://github.com/waytoamitj/ImageManager
+
+i. Kafka producer and topic (user.image) created to deliver JSON event with key=userId and value=user object JSON.
+
+j. Scalable, resilient, modular application for mentioned volume processing. It can address 100K RPM on distributed instances. Enhancement can be done by Multi-Threaded Async submission of tasks at service layer while controller will return immediately.
+
 
 **2. Architecture Overview**
 
@@ -95,13 +118,33 @@ deleteImage Endpoint: Accepts the URL of the image to be deleted and removes it 
 
 ![image](https://github.com/waytoamitj/ImageManager/assets/171623556/73bda00a-c887-4a0d-a6b5-ce16c6e146e1)
 
-**15. Future Design considerations which are not accomplished due to time constraints / Infrastructure limitations**
+****15. Kafka cloud Topic creation and Kafka producer is publishing key=userId value=user object json.**
+
+**logs:**
+
+Publishing on Kafka Topic user.image ProducerRecord(topic=user.image, partition=null, headers=RecordHeaders(headers = [], isReadOnly = false), **key=10, value={"id":10,"username":"user9","password":"password9","images":[{"id":"tDBC44D","deletehash":"y0IXvrx0NAMaKMc","type":"image/jpeg","size":"97446","link":"https://i.imgur.com/tDBC44D.jpeg"}]}**, timestamp=null)  Value : {"id":10,"username":"user9","password":"password9","images":[{"id":"tDBC44D","deletehash":"y0IXvrx0NAMaKMc","type":"image/jpeg","size":"97446","link":"https://i.imgur.com/tDBC44D.jpeg"}]}
+2024-06-04T02:12:49.058-04:00  INFO 10452 --- [ImageManager] [nio-8090-exec-3] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+
+
+![image](https://github.com/waytoamitj/ImageManager/assets/171623556/ddf5b3f3-2e37-44a3-bbe4-3a05ef57d9ec)
+
+
+
+**16. Future Design considerations which are not accomplished due to time constraints / Infrastructure limitations****
 
 a. API gateway pattern (eg APIGEE) to have single point of entry for exposed end points. Authentication can be done at API gateway and can act as facade pattern for microservices.
 
-b. Integration of Swagger for API documentation.
+b. Multi-Threaded Async submission of tasks to service layer while controller will return immediately.
 
-c. 
+c. Async submission of Kafka event on cloud topic for user-image json
+
+d. CQRS pattern for writing and reading separation.
+
+e. Swagger
+
+f. oAuth2 / JWT spring security
+
+g. 
 
 
 
