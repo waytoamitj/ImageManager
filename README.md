@@ -22,12 +22,15 @@ User Controller: User Controller defines REST endpoints to perform necessary act
 4. Users list : /api/users/list (GET)
 
 5. Image Upload in Imgur app by authenticated and authorized User : /api/users/{userId}/images/upload   (POST)
+
 uploadImage Endpoint: Accepts a MultipartFile representing the image to be uploaded. The logic inside the method should handle storing the image and updating the user's images list.
 
 6. Fetch uploaded image in Imgur app for authenticated and authorized User :  /api/users/{userId}/images/{imageId}   (GET)
+
 viewImages Endpoint: Retrieves the list of images associated with the user and returns it in the response.
 
 7. Delete image in Imgur app by authenticated and authorized User :  /api/users/{userId}/images/{imageDeleteHash}    (DELETE)
+
 deleteImage Endpoint: Accepts the URL of the image to be deleted and removes it from the user's images list.
 
 ![image](https://github.com/waytoamitj/ImageManager/assets/171623556/9145d352-fb57-4f50-b0db-a37cd6833806)
