@@ -96,8 +96,11 @@ deleteImage Endpoint: Accepts the URL of the image to be deleted and removes it 
 ![image](https://github.com/waytoamitj/ImageManager/assets/171623556/73bda00a-c887-4a0d-a6b5-ce16c6e146e1)
 
 **15. Future Design considerations which are not accomplished due to time constraints / Infrastructure limitations**
+
 a. API gateway pattern (eg APIGEE) to have single point of entry for exposed end points. Authentication can be done at API gateway and can act as facade pattern for microservices.
+
 b. Integration of Swagger for API documentation.
+
 c. 
 
 
