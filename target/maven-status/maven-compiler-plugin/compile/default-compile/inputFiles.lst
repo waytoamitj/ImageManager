@@ -1,5 +1,6 @@
 C:\aj\work\ImageManager\src\main\java\com\syf\ImageManager\controller\UserController.java
 C:\aj\work\ImageManager\src\main\java\com\syf\ImageManager\ImageManagerApplication.java
+C:\aj\work\ImageManager\src\main\java\com\syf\ImageManager\kafka\KafkaProducer.java
 C:\aj\work\ImageManager\src\main\java\com\syf\ImageManager\model\Image.java
 C:\aj\work\ImageManager\src\main\java\com\syf\ImageManager\model\ImgurResponse.java
 C:\aj\work\ImageManager\src\main\java\com\syf\ImageManager\model\User.java

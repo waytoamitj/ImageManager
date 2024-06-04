@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.syf.ImageManager.kafka.KafkaProducer;
 import com.syf.ImageManager.model.Image;
 import com.syf.ImageManager.model.ImgurResponse;
 import com.syf.ImageManager.model.User;
@@ -42,6 +43,9 @@ public class UserController {
 
 	@Autowired
 	private ImgurService imgurService;
+	
+	@Autowired
+	KafkaProducer kafkaProducer;
 
 	/**
 	 * @return list of registered users
@@ -101,7 +105,11 @@ public class UserController {
 			// Associate uploaded image to User
 			user.getImages().add(image);
 			userService.updateUser(userId, user);
-
+			
+			
+			// Below to make this Async call and return REST api immediately. Commented out as Cloud producer is getting disconnected. Network issue with bootstrap server.
+//			kafkaProducer.produceJsonMessage(user);		
+			
 			return ResponseEntity.ok(imageUrl);
 		} else {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);

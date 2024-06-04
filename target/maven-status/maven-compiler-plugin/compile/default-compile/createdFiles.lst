@@ -1,3 +1,4 @@
+com\syf\ImageManager\kafka\KafkaProducer.class
 com\syf\ImageManager\service\UserService.class
 com\syf\ImageManager\model\ImgurResponse.class
 com\syf\ImageManager\service\impl\ImgurServiceImpl.class
